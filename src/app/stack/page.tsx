@@ -39,10 +39,19 @@ import { motion } from 'framer-motion'
 
 const Stack = () => {
   const [winWidth, setWinWidth] = useState(window.innerWidth)
-  const handleResize = () => {
-    setWinWidth(window.innerWidth)
-  }
-  window.addEventListener('resize', handleResize)
+  // const handleResize = () => {
+  //   setWinWidth(window.innerWidth)
+  // }
+  // window.addEventListener('resize', handleResize)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWinWidth(window.innerWidth)
+      window.addEventListener('resize', handleResize)
+    }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.2
