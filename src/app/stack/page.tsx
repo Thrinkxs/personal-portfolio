@@ -39,9 +39,9 @@ import { motion } from 'framer-motion'
 
 const Stack = () => {
   const [winWidth, setWinWidth] = useState(window.innerWidth)
-  // const handleResize = () => {
-  //   setWinWidth(window.innerWidth)
-  // }
+  const handleResize = () => {
+    setWinWidth(window.innerWidth)
+  }
   // window.addEventListener('resize', handleResize)
   useEffect(() => {
     if (typeof window !== 'undefined') {
