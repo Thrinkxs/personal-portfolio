@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <div className='flex justify-evenly items-center -mx-40 2xl:flex 2xl:justify-evenly xl:-mx-96  '>
+        <div className='flex justify-evenly items-center gap-10 2xl:flex 2xl:justify-evenly '>
           <div>
             <Link href='/'>
               <Image

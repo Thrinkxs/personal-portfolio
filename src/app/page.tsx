@@ -161,7 +161,7 @@ export default function Home () {
       <div className='flex flex-row sm:flex-col gap-10 py-10 mx-10 sm:mx-2'>
         <div className='hidden sm:block relative flex-1  w-74 h-74  bg-[url("../../public/wastywealth.png")] bg-no-repeat bg-cover group hover:bg-[url("../../public/wasty3.png")] hover:transition-all hover:duration-500 hover:bg-transparent'>
           <p className=' h-64 flex items-center justify-center text-white text-2xl font-bold bg-black bg-opacity-80 transition-opacity duration-500 opacity-0 group-hover:opacity-100'>
-            React
+            Wasty Wealth
           </p>
         </div>
         <div className='sm:hidden'>

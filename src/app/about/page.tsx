@@ -33,7 +33,15 @@ import ww from '../../../public/wastywealth.png'
 import ww2 from '../../public/wasty3.png'
 import port from '../../../public/portfolio.png'
 import astud from '../../../public/astudent.png'
-const page = () => {
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+const About = () => {
+  const [winWidth, setWinWidth] = useState(window.innerWidth)
+  const handleResize = () => {
+    setWinWidth(window.innerWidth)
+  }
+  window.addEventListener('resize', handleResize)
   const data = [
     {
       label: 'Wasty Wealth',
@@ -51,40 +59,94 @@ const page = () => {
       desc: ''
     }
   ]
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2
+  })
 
+  const fadeIn = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0 }
+  }
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 }
+  }
   return (
     <div className='text-white'>
       <div className='text-white mt-24 flex flex-row sm:flex-col justify-evenly items-center'>
-        <Image
-          src={profile}
-          alt='profile'
-          width={200}
-          className='rounded-t-full sm:mx-auto'
-        />
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          <Image
+            src={profile}
+            alt='profile'
+            width={200}
+            className='rounded-t-full sm:mx-auto'
+          />
+        </motion.div>
         <div className='sm:w-full w-1/3'>
-          <p className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'>
+          <motion.p
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+          >
             I’m a very passionate and highly motivated individual with an eye
             for creative UI/UX design and high quality Software Development.
-          </p>
+          </motion.p>
 
-          <p className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'>
+          <motion.p
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeLeft}
+            transition={{ duration: 0.5 }}
+            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+          >
             My abundant energy fuels me in pursuit of many interest and hobbies.
-          </p>
-          <p className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'>
+          </motion.p>
+          <motion.p
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+          >
             I ’m a fast learner, and quite adept at quickly mastering frameworks
             or tools specific to user preference.{' '}
-          </p>
+          </motion.p>
 
-          <p className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'>
+          <motion.p
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+          >
             As a former medical scientist and startup founder, I have an
             excellent attention to details and able to work under tight
             deadlines.{' '}
-          </p>
-          <p className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'>
+          </motion.p>
+          <motion.p
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeLeft}
+            transition={{ duration: 0.5 }}
+            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+          >
             My personality type like Steve Jobs, is INTJ and it reflects my
             commitment to innovation and a strong drive for achieving excellence
             in every project I undertake
-          </p>
+          </motion.p>
         </div>
       </div>
       {/* Experience */}
@@ -192,7 +254,13 @@ const page = () => {
         <h2 className='text-glacous sm:ml-8  text-lg font-semibold my-5 '>
           Projects
         </h2>
-        <div className='flex sm:flex-col sm:gap-5 gap-4 flex-wrap  sm:justify-stretch sm:items-stretch  justify-center md:items-center   '>
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='flex sm:flex-col sm:gap-5 gap-4 flex-wrap  sm:justify-stretch sm:items-stretch  justify-center md:items-center   '
+        >
           <Card className='py-4  rounded-md mx-3'>
             <CardBody className='overflow-visible py-2'>
               <Image
@@ -339,7 +407,7 @@ const page = () => {
               </div>
             </CardHeader>
           </Card> */}
-        </div>
+        </motion.div>
       </div>
       {/* Startup Projects */}
 
@@ -352,7 +420,13 @@ const page = () => {
           challenge myself to designing and building my own products to solve
           problems I come across
         </p>
-        <div className='flex sm:flex-col sm:gap-5 justify-center items-center '>
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='flex sm:flex-col sm:gap-5 justify-center items-center '
+        >
           <Card className='sm:py-4  rounded-md mx-3'>
             <CardBody className='overflow-visible py-2 bg-white rounded-xl'>
               <Image
@@ -365,31 +439,54 @@ const page = () => {
             </CardBody>
 
             <CardHeader className='pb-0 pt-2 px-4 flex-col'>
-              <p className=' uppercase font-bold '>
+              <motion.p
+                animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className=' uppercase font-bold '
+              >
                 AI Career Planning Platform
-              </p>
+              </motion.p>
               <Link href='https://astudentsdream.co.za/' target='_blank'>
                 {' '}
-                <small className='text-default-500 flex items-center justify-center gap-2 p-1 rounded-md bg-blue-300'>
+                <motion.small
+                  animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+                  transition={{ ease: 'easeIn', duration: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className='text-default-500 flex items-center justify-center gap-2 p-1 rounded-md bg-blue-300'
+                >
                   {' '}
                   astudentsdreadream
                   <VscLinkExternal />
-                </small>
+                </motion.small>
               </Link>
             </CardHeader>
           </Card>
-        </div>
+        </motion.div>
       </div>
       <div className='flex sm:justify-between justify-center items-center border mx-4 my-4 py-10 px-2 rounded-md'>
-        <div>
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { x: [-100, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
           <h3 className='sm:mx-0 mx-10'>Ready to kickstart your project ?</h3>
-        </div>
-        <div className='flex justify-center items-center gap-2 border border-lcterine rounded-full px-2 py-1 hover:bg-lcterine hover:text-gray-500 font-semibold transition-all text-sm '>
+        </motion.div>
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { x: [100, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='flex justify-center items-center gap-2 border border-lcterine rounded-full px-2 py-1 hover:bg-lcterine hover:text-gray-500 font-semibold transition-all text-sm '
+        >
           Let's go <FaRegHandshake />
-        </div>
+        </motion.div>
       </div>
     </div>
   )
 }
 
-export default page
+export default About
