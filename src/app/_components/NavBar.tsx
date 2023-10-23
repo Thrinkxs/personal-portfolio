@@ -19,7 +19,7 @@ const Header = () => {
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
-  }, [])
+  })
 
   return (
     <>

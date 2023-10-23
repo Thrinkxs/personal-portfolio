@@ -57,7 +57,7 @@ export default function Home () {
       >
         <span className='text-lcterine mx-2'>Hey!</span>
         <span className=' text-white hover:bg-gradient-to-r hover:from-bgGrad hover:to-lcterine via-teal-400 via-55% hover:animate-pulse p-2 rounded'>
-          I'm Emmanuel
+          Im Emmanuel
         </span>
       </motion.h1>
 
@@ -113,7 +113,7 @@ export default function Home () {
             variants={fadeIn}
             transition={{ duration: 0.5 }}
           >
-            I'm a full-stack Software Engineer, with 4 years of experience
+            Im a full-stack Software Engineer, with 4 years of experience
             building projects that solve problems for clients.
           </motion.p>
           <motion.p
@@ -137,7 +137,7 @@ export default function Home () {
             variants={fadeIn}
             transition={{ duration: 0.5 }}
           >
-            When I'm not doing that, I'm either watching anime or listening to
+            When Im not doing that, Im either watching anime or listening to
             Japanese (日本語のうた) songs。 PS: I speak Japanese
           </motion.p>
           <motion.button
@@ -179,7 +179,7 @@ export default function Home () {
         <h3>Get In Touch</h3>
         <p>
           <span className='text-lcterine'>Have a Project or Job? </span>
-          I'm open to any New Opportunity
+          Im open to any New Opportunity
         </p>
         <button className='border p-2 border-lcterine hover:bg-lcterine hover:text-black font-bold hover:transition-all my-2 duration-500'>
           <Link

@@ -416,7 +416,7 @@ const About = () => {
           My Startup Projects
         </h3>
         <p className='px-3 pb-4 sm:w-full w-1/2 sm:mx-0 mx-auto'>
-          I love building stuff, so I decided it'd be fun and exciting to
+          I love building stuff, so I decided it would be fun and exciting to
           challenge myself to designing and building my own products to solve
           problems I come across
         </p>
@@ -482,7 +482,7 @@ const About = () => {
           whileInView={{ opacity: 1 }}
           className='flex justify-center items-center gap-2 border border-lcterine rounded-full px-2 py-1 hover:bg-lcterine hover:text-gray-500 font-semibold transition-all text-sm '
         >
-          Let's go <FaRegHandshake />
+          Lets go <FaRegHandshake />
         </motion.div>
       </div>
     </div>

@@ -39,7 +39,7 @@ const Page = () => {
     <div className='text-white mx-5 mt-14'>
       <div className='flex sm:flex-col sm:gap-10 justify-between'>
         <div>
-          <h1 className='text-4xl font-bold md:py-3'>Let's work together</h1>
+          <h1 className='text-4xl font-bold md:py-3'>Lets work together</h1>
           <p className='text-xs text-gray-200'>
             Please answer the following questions so I can get a better
             understanding of your requirements
