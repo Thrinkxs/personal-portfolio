@@ -37,6 +37,15 @@ import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+import dynamic, { LoaderComponent } from 'next/dynamic'
+
+const StackDynamic: LoaderComponent<{}> = dynamic(
+  () => Promise.resolve(Stack),
+  {
+    ssr: false
+  }
+)
+
 const Stack = () => {
   const [winWidth, setWinWidth] = useState(600)
 

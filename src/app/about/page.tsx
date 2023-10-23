@@ -36,6 +36,15 @@ import astud from '../../../public/astudent.png'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import dynamic, { LoaderComponent } from 'next/dynamic'
+
+const AboutDynamic: LoaderComponent<{}> = dynamic(
+  () => Promise.resolve(About),
+  {
+    ssr: false
+  }
+)
+
 const About = () => {
   const [winWidth, setWinWidth] = useState(600)
 
