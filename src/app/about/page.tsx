@@ -38,13 +38,9 @@ import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import dynamic, { LoaderComponent } from 'next/dynamic'
 
-const AboutDynamic: LoaderComponent<{}> = dynamic(
-  () => Promise.resolve(About),
-  {
-    ssr: false
-  }
-)
+import { ComponentType, lazy } from 'react'
 
+const AboutDynamic = lazy<ComponentType<{}>>(() => import('./page'))
 const About = () => {
   const [winWidth, setWinWidth] = useState(600)
 
