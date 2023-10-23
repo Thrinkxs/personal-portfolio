@@ -42,22 +42,6 @@ import { ComponentType, lazy } from 'react'
 
 const AboutDynamic = lazy<ComponentType<{}>>(() => import('./page'))
 const About = () => {
-  const [winWidth, setWinWidth] = useState(600)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setWinWidth(window.innerWidth)
-      }
-    }
-    if (typeof window !== 'undefined') {
-      setWinWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-    }
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
   const data = [
     {
       label: 'Wasty Wealth',
@@ -92,7 +76,7 @@ const About = () => {
     <div className='text-white'>
       <div className='text-white mt-24 flex flex-row sm:flex-col justify-evenly items-center'>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
+          animate={{ y: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -271,7 +255,7 @@ const About = () => {
           Projects
         </h2>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
+          animate={{ y: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -437,7 +421,7 @@ const About = () => {
           problems I come across
         </p>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+          animate={{ y: [100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -456,7 +440,7 @@ const About = () => {
 
             <CardHeader className='pb-0 pt-2 px-4 flex-col'>
               <motion.p
-                animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+                animate={{ y: [100, 0] }}
                 transition={{ ease: 'easeIn', duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -467,7 +451,7 @@ const About = () => {
               <Link href='https://astudentsdream.co.za/' target='_blank'>
                 {' '}
                 <motion.small
-                  animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
+                  animate={{ y: [100, 0] }}
                   transition={{ ease: 'easeIn', duration: 1 }}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -484,7 +468,7 @@ const About = () => {
       </div>
       <div className='flex sm:justify-between justify-center items-center border mx-4 my-4 py-10 px-2 rounded-md'>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { x: [-100, 0] }}
+          animate={{ x: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -492,7 +476,7 @@ const About = () => {
           <h3 className='sm:mx-0 mx-10'>Ready to kickstart your project ?</h3>
         </motion.div>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { x: [100, 0] }}
+          animate={{ x: [100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
