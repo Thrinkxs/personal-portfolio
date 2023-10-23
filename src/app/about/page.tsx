@@ -46,10 +46,12 @@ const About = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setWinWidth(window?.innerWidth)
+      if (typeof window !== 'undefined') {
+        setWinWidth(window.innerWidth)
+      }
     }
     if (typeof window !== 'undefined') {
-      setWinWidth(window?.innerWidth)
+      setWinWidth(window.innerWidth)
       window.addEventListener('resize', handleResize)
     }
     return () => {
