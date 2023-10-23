@@ -85,7 +85,7 @@ export default function Home () {
       </motion.p>
       <div className='flex flex-row sm:flex-col justify-evenly items-center'>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-1000, 0] }}
+          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -82,7 +82,7 @@ const Stack = () => {
         Tools I use in my development
       </p>
       {/* className="sm:grid sm:grid-cols-3 sm:gap-5 sm:px-8 sm:py-4 sm:mx-4" */}
-      <div className='flex md:flex-col justify-center items-center gap-5 flex-wrap my-5 '>
+      <div className='flex flex-row sm:flex-col justify-center items-center gap-5 flex-wrap my-5 '>
         <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72 '>
           {/* <FaAngular />
           <FaReact /> */}
@@ -91,10 +91,11 @@ const Stack = () => {
           <p className='text-center my-10 border p-2 rounded '>React</p>
         </motion.div>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
-          transition={{ ease: 'easeIn', duration: 1 }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          ref={ref}
+          initial='hidden'
+          animate={inView ? 'visible' : 'hidden'}
+          variants={fadeIn}
+          transition={{ duration: 0.5 }}
           className='bg-card p-20 rounded-xl md:h-72 h-72'
         >
           {/* <FaAngular />
