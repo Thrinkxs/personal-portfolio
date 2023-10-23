@@ -14,11 +14,13 @@ const Page = () => {
 
   const router = useRouter()
 
-  const handleInputChange = e => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
   }
-  const handleSubmit = async e => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       await sendEmail(formData)
