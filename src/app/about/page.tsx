@@ -101,7 +101,7 @@ const About = () => {
             src={profile}
             alt='profile'
             width={200}
-            className='rounded-t-full sm:mx-auto'
+            className='rounded-t-full sm:mx-auto -mb-36 sm:-mb-0'
           />
         </motion.div>
         <div className='sm:w-full w-1/3'>
