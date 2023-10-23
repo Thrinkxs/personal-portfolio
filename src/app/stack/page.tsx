@@ -44,22 +44,6 @@ import { ComponentType, lazy } from 'react'
 const StackDynamic = lazy<ComponentType<{}>>(() => import('./page'))
 
 const Stack = () => {
-  const [winWidth, setWinWidth] = useState(600)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setWinWidth(window.innerWidth)
-      }
-    }
-    if (typeof window !== 'undefined') {
-      setWinWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-    }
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.2
@@ -91,7 +75,7 @@ const Stack = () => {
           <p className='text-center my-10 border p-2 rounded '>React</p>
         </motion.div>
         <motion.div
-          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
+          animate={{ y: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
