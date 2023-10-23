@@ -34,7 +34,7 @@ import webflow from '../../../public/webflow.svg'
 import wordpress from '../../../public/wordpress.svg'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const Stack = () => {
