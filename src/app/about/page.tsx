@@ -42,6 +42,22 @@ import { ComponentType, lazy } from 'react'
 
 const AboutDynamic = lazy<ComponentType<{}>>(() => import('./page'))
 const About = () => {
+  const [winWidth, setWinWidth] = useState(600)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined') {
+        setWinWidth(window.innerWidth)
+      }
+    }
+    if (typeof window !== 'undefined') {
+      setWinWidth(window.innerWidth)
+      window.addEventListener('resize', handleResize)
+    }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   const data = [
     {
       label: 'Wasty Wealth',
@@ -155,7 +171,7 @@ const About = () => {
           Experience
         </h2>{' '}
         <Tabs
-          orientation={window.innerWidth < 640 ? 'horizontal' : 'vertical'}
+          orientation={winWidth < 640 ? 'horizontal' : 'vertical'}
           colorScheme='facebook'
           className='mx-8 '
           isManual
