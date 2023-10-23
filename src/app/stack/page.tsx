@@ -34,24 +34,15 @@ import webflow from '../../../public/webflow.svg'
 import wordpress from '../../../public/wordpress.svg'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const Stack = () => {
-  const [winWidth, setWinWidth] = useState(window.innerWidth)
+  const [winWidth, setWinWidth] = useState(window?.innerWidth)
   const handleResize = () => {
-    setWinWidth(window.innerWidth)
+    setWinWidth(window?.innerWidth)
   }
-  // window.addEventListener('resize', handleResize)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWinWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-    }
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  window?.addEventListener('resize', handleResize)
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.2

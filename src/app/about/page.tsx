@@ -37,20 +37,11 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 const About = () => {
-  const [winWidth, setWinWidth] = useState(window.innerWidth)
+  const [winWidth, setWinWidth] = useState(window?.innerWidth)
   const handleResize = () => {
-    setWinWidth(window.innerWidth)
+    setWinWidth(window?.innerWidth)
   }
-  // window.addEventListener('resize', handleResize)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWinWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-    }
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  window?.addEventListener('resize', handleResize)
   const data = [
     {
       label: 'Wasty Wealth',
