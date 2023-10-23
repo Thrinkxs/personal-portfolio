@@ -13,12 +13,12 @@ import call from '../../public/call.png'
 
 import { Toaster } from 'sonner'
 import { HashLink } from 'react-router-hash-link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import hr from '../../public/hr.png'
 import ww from '../../public/wastywealth.png'
 import ww2 from '../../public/wasty3.png'
 export default function Home () {
-  const [winWidth, setWinWidth] = useState(window.innerWidth)
+  const [winWidth, setWinWidth] = useState(600)
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
@@ -29,10 +29,20 @@ export default function Home () {
     setIsHovered(false)
   }
 
-  const handleResize = () => {
-    setWinWidth(window.innerWidth)
-  }
-  window.addEventListener('resize', handleResize)
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined') {
+        setWinWidth(window.innerWidth)
+      }
+    }
+    if (typeof window !== 'undefined') {
+      setWinWidth(window.innerWidth)
+      window.addEventListener('resize', handleResize)
+    }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const [ref, inView] = useInView({
     triggerOnce: false,
