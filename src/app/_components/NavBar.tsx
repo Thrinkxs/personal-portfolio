@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import logo from '../../../public/me.png'
+import { Toaster } from 'sonner'
+
 const Header = () => {
   const [navBar, setNavBar] = useState(false)
   const [scrollHeight, setScrollHeight] = useState(0)
@@ -24,6 +26,7 @@ const Header = () => {
       <div>
         <div className='flex justify-evenly items-center gap-10 2xl:flex 2xl:justify-evenly '>
           <div>
+            <Toaster position='top-right' richColors expand closeButton />
             <Link href='/'>
               <Image
                 src={logo}

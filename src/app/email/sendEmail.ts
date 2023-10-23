@@ -18,8 +18,5 @@ const sendEmail = async (formData: formData) => {
     subject: emailSubject,
     react: React.createElement(ContactEmail, { name, message })
   })
-  return NextResponse.json({
-    status: 'OK'
-  })
 }
 export default sendEmail
