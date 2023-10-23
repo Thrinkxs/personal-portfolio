@@ -1,0 +1,12 @@
+{
+  "editor.defaultFormatter": "numso.prettier-standard-vscode",
+  "django.snippets.exclude": ["cms", "wagtail"],
+  "html.format.templating": false,
+  "[django-html]": {
+    "editor.defaultFormatter": null,
+    "editor.defaultFoldingRangeProvider": null
+  },
+  "django.i18n": false,
+  "django.showContributeNotification": false,
+  "django.snippets.use": false
+}

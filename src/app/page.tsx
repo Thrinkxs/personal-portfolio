@@ -1,112 +1,195 @@
+'use client'
 import Image from 'next/image'
+import hero from '../../public/hero.png'
+import Header from './_components/NavBar'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
+import Link from 'next/link'
+import github from '../../public/github.svg'
+import linkedin from '../../public/icons8-linkedin.svg'
+import profile from '../../public/profile.jpg'
+import call from '../../public/call.png'
 
-export default function Home() {
+import { Toaster } from 'sonner'
+import { HashLink } from 'react-router-hash-link'
+import { useState } from 'react'
+import hr from '../../public/hr.png'
+import ww from '../../public/wastywealth.png'
+import ww2 from '../../public/wasty3.png'
+export default function Home () {
+  const [winWidth, setWinWidth] = useState(window.innerWidth)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
+  const handleResize = () => {
+    setWinWidth(window.innerWidth)
+  }
+  window.addEventListener('resize', handleResize)
+
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2
+  })
+
+  const fadeIn = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0 }
+  }
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 }
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className='text-white '>
+      <motion.h1
+        className='text-5xl sm:text-4xl mx-auto px-4 font-semibold py-5 text-center 2xl:py-20'
+        animate={{ y: [100, 0] }}
+        transition={{ ease: 'easeIn', duration: 1 }}
+      >
+        <span className='text-lcterine mx-2'>Hey!</span>
+        <span className=' text-white hover:bg-gradient-to-r hover:from-bgGrad hover:to-lcterine via-teal-400 via-55% hover:animate-pulse p-2 rounded'>
+          I'm Emmanuel
+        </span>
+      </motion.h1>
+
+      <div className=' flex justify-center gap-1 2xl:gap-5 mx-24'>
+        <AiFillLinkedin className='text-4xl' />{' '}
+        <AiFillGithub className='text-4xl' />
+      </div>
+      <motion.p
+        // initial={{ x: "-300%" }}
+        animate={{ x: [-1000, 0] }}
+        transition={{ ease: 'easeIn', duration: 1, delay: 1.5 }}
+        className='text-white text-xl sm:text-md text-center mx-auto py-4 leading-loose tracking-wider sm:bg-gradient-to-r sm:from-cyan-400 sm:to-teal-500 sm:p-4 sm:text-transparent sm:bg-clip-text'
+      >
+        Full stack Sotware Engineer, with an eye for aesthetic designs
+      </motion.p>
+      <div className='flex flex-row sm:flex-col justify-evenly items-center'>
+        <motion.div
+          animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-1000, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          <Image
+            alt='hero-image'
+            src={hero}
+            width={120}
+            className='w-40 sm:w-40'
+          />
+        </motion.div>
+        <motion.div
+          ref={ref}
+          initial='hidden'
+          animate={inView ? 'visible' : 'hidden'}
+          variants={fadeIn}
+          transition={{ duration: 0.5 }}
+          className='sm:w-full w-1/3'
+        >
+          <motion.h2
+            className='text-glacous sm:ml-8 sm:text-lg sm:font-semibold sm:text-left text-center'
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            ABOUT ME
+          </motion.h2>
+          <motion.p
+            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+          >
+            I'm a full-stack Software Engineer, with 4 years of experience
+            building projects that solve problems for clients.
+          </motion.p>
+          <motion.p
+            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeLeft}
+            transition={{ duration: 0.5 }}
+          >
+            I bring a holistic approach to crafting digital solutions, from
+            envisioning creative concepts to translating them into seamless user
+            experiences. I thrive on turning complexity into user-friendly
+            innovation.
+          </motion.p>
+          <motion.p
+            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+          >
+            When I'm not doing that, I'm either watching anime or listening to
+            Japanese (日本語のうた) songs。 PS: I speak Japanese
+          </motion.p>
+          <motion.button
+            type='button'
+            className='border  ml-8 rounded-full p-1 text-white hover:bg-glacous bg-opacity-5 transition-all 2xl:py-2 2xl:px-4 my-4 '
+            ref={ref}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeIn}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href='/about'>Wanna learn more about me?</Link>
+          </motion.button>
+        </motion.div>
+      </div>
+      <h2 className='text-glacous ml-8 text-lg font-semibold py-4'>
+        FEATURED PROJECT
+      </h2>
+      {/* bg-[url("../../public/hr.png")] */}
+      {/* flex sm:flex-col flex-row flex-wrap sm:justify-center sm:gap-4 sm:items-center gap-10 justify-center items-center */}
+      <div className='flex flex-row sm:flex-col gap-10 py-10 mx-10 sm:mx-2'>
+        <div className='hidden sm:block relative flex-1  w-74 h-74  bg-[url("../../public/wastywealth.png")] bg-no-repeat bg-cover group hover:bg-[url("../../public/wasty3.png")] hover:transition-all hover:duration-500 hover:bg-transparent'>
+          <p className=' h-64 flex items-center justify-center text-white text-2xl font-bold bg-black bg-opacity-80 transition-opacity duration-500 opacity-0 group-hover:opacity-100'>
+            React
+          </p>
         </div>
+        <div className='sm:hidden'>
+          <Image alt='wasty wealth' src={ww} width={900} />
+        </div>
+
+        {/* Click to see mre of my work */}
+        <Link href='/about/#projects'>
+          <button className='border p-2 rounded-full hover:bg-white/80 hover:text-black hover:transition-all duration-500'>
+            View More Projects
+          </button>
+        </Link>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className='text-center sm:py-3 my-40 sm:my-0 sm:border-none border py-10 rounded-md'>
+        <h3>Get In Touch</h3>
+        <p>
+          <span className='text-lcterine'>Have a Project or Job? </span>
+          I'm open to any New Opportunity
+        </p>
+        <button className='border p-2 border-lcterine hover:bg-lcterine hover:text-black font-bold hover:transition-all my-2 duration-500'>
+          <Link
+            href="mailto:emmanuelozigue@gmail.com?subject=Let's work together
+   
+          "
+          >
+            {/* // && body=My custom mail body */} Lets Talk{' '}
+          </Link>
+        </button>
       </div>
     </main>
   )
