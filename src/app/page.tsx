@@ -72,8 +72,16 @@ export default function Home () {
       </motion.h1>
 
       <div className=' flex justify-center gap-1 2xl:gap-5 mx-24'>
-        <AiFillLinkedin className='text-4xl' />{' '}
-        <AiFillGithub className='text-4xl' />
+        <Link
+          href='https://www.linkedin.com/in/emmanuel-omokhegbe-b45338155/'
+          target='_blank'
+        >
+          <AiFillLinkedin className='text-4xl' />{' '}
+        </Link>
+        <Link href='https://github.com/Thrinkxs' target='_blank'>
+          {' '}
+          <AiFillGithub className='text-4xl' />
+        </Link>
       </div>
       <motion.p
         // initial={{ x: "-300%" }}
@@ -94,7 +102,7 @@ export default function Home () {
             alt='hero-image'
             src={hero}
             width={120}
-            className='w-40 sm:w-40'
+            className='w-40 sm:w-40 mt-36 sm:mt-0'
           />
         </motion.div>
         <motion.div

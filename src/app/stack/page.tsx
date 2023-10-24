@@ -98,7 +98,7 @@ const Stack = () => {
         </motion.div>
         <motion.div
           animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
-          transition={{ ease: 'easeIn', duration: 1 }}
+          transition={{ ease: 'easeIn', duration: 0.7 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className='bg-card p-20 rounded-xl md:h-72 h-72'
@@ -109,14 +109,26 @@ const Stack = () => {
           <Image alt='img-tech stack' src={angular} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Angular</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={nextjs} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Next Js</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
@@ -216,56 +228,104 @@ const Stack = () => {
         Software I use for productivity and building stuff
       </p>
       <div className='flex md:flex-col justify-center items-center gap-5 flex-wrap my-5'>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={figma} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Figma</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 0.7 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={vscode} width={100} />
           <p className='text-center my-10 border p-2 rounded '>VS Code</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={linux} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Linux</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={pycharm} width={100} />
           <p className='text-center my-10 border p-2 rounded '>PyCharm</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={emacs} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Emacs</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 0.7 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={framer} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Framer</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={vite} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Vite</p>
         </motion.div>
-        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
+        <motion.div
+          animate={winWidth > 768 ? { y: [-100, 0] } : { x: [0, 0] }}
+          transition={{ ease: 'easeIn', duration: 1.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className='bg-card p-20 rounded-xl md:h-72 h-72'
+        >
           {/* <FaAngular />
           <FaReact /> */}
 
