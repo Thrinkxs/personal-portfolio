@@ -11,12 +11,16 @@ type formData = { name: string; email: string; message: string }
 const sendEmail = async (formData: formData) => {
   const { name, email, message } = formData
   const emailSubject = `New project from ${name}`
-  resend.emails.send({
-    from: 'onboarding@resend.dev',
-    to: 'emmanuelozigue@gmail.com',
-    reply_to: email,
-    subject: emailSubject,
-    react: React.createElement(ContactEmail, { name, message })
-  })
+  try {
+    resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'emmanuelozigue@gmail.com',
+      reply_to: email,
+      subject: emailSubject,
+      react: React.createElement(ContactEmail, { name, message })
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }
 export default sendEmail

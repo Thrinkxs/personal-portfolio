@@ -109,42 +109,21 @@ const Stack = () => {
           <Image alt='img-tech stack' src={angular} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Angular</p>
         </motion.div>
-        <motion.div
-          ref={ref}
-          initial='hidden'
-          animate={inView ? 'visible' : 'hidden'}
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-          className='bg-card p-20 rounded-xl md:h-72 h-72'
-        >
+        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={nextjs} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Next Js</p>
         </motion.div>
-        <motion.div
-          ref={ref}
-          initial='hidden'
-          animate={inView ? 'visible' : 'hidden'}
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-          className='bg-card p-20 rounded-xl md:h-72 h-72'
-        >
+        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
           {/* <FaAngular />
           <FaReact /> */}
 
           <Image alt='img-tech stack' src={python} width={100} />
           <p className='text-center my-10 border p-2 rounded '>Python</p>
         </motion.div>
-        <motion.div
-          ref={ref}
-          initial='hidden'
-          animate={inView ? 'visible' : 'hidden'}
-          variants={fadeLeft}
-          transition={{ duration: 0.5 }}
-          className='bg-card p-20 rounded-xl md:h-72 h-72'
-        >
+        <motion.div className='bg-card p-20 rounded-xl md:h-72 h-72'>
           {/* <FaAngular />
           <FaReact /> */}
 

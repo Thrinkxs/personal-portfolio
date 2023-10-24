@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "email": "email dev",
+    "email": "email dev --dir src/email",
     "start": "next start",
     "lint": "next lint"
   },
