@@ -193,11 +193,14 @@ export default function Home () {
         </p>
         <button className='border p-2 border-lcterine hover:bg-lcterine hover:text-black font-bold hover:transition-all my-2 duration-500'>
           <Link
-            href="mailto:emmanuelozigue@gmail.com?subject=Let's work together
-   
-          "
+            href="mailto:emmanuelozigue@gmail.com?subject=Let's work together"
+            onClick={e => {
+              e.preventDefault()
+              window.location.href =
+                "mailto:emmanuelozigue@gmail.com?subject=Let's work together"
+            }}
           >
-            {/* // && body=My custom mail body */} Lets Talk{' '}
+            Lets Talk{' '}
           </Link>
         </button>
       </div>

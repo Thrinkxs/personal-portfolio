@@ -42,7 +42,16 @@ const Header = () => {
               type='button'
               className='text-black mx-2 xl:px-1 hover:bg-lcterine   bg-white sm:p-2 rounded-full  active:bg-gray-500 active:text-white 2xl:p-3  my-4 xl:-mr-96  '
             >
-              <Link href='/contact'>Get in touch</Link>
+              <Link
+                href="mailto:emmanuelozigue@gmail.com?subject=Let's work together"
+                onClick={e => {
+                  e.preventDefault()
+                  window.location.href =
+                    "mailto:emmanuelozigue@gmail.com?subject=Let's work together"
+                }}
+              >
+                Get in touch{' '}
+              </Link>
             </button>
           </div>
         </div>
