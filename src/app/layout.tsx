@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'codeThrinkxs',
-  description: 'My new portfolio app'
+  description: 'My portfolio app'
 }
 
 export default function RootLayout ({

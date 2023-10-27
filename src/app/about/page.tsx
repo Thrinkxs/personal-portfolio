@@ -89,8 +89,8 @@ const About = () => {
     visible: { opacity: 1, x: 0 }
   }
   return (
-    <div className='text-white'>
-      <div className='text-white mt-24 flex flex-row sm:flex-col justify-evenly items-center'>
+    <div className='text-white   sm:mx-auto   w-full sm:w-72'>
+      <div className='text-white mt-24 flex flex-row sm:flex-col justify-evenly items-center w-fit'>
         <motion.div
           animate={winWidth > 768 ? { x: [-100, 0] } : { y: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
@@ -104,14 +104,14 @@ const About = () => {
             className='rounded-t-full sm:mx-auto -mb-36 sm:-mb-0'
           />
         </motion.div>
-        <div className='sm:w-full w-1/3'>
+        <div className='sm:w-full w-1/3 '>
           <motion.p
             ref={ref}
             initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeIn}
             transition={{ duration: 0.5 }}
-            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+            className='sm:-mx-5  sm:text-center sm:tracking-wider sm:py-4'
           >
             I’m a very passionate and highly motivated individual with an eye
             for creative UI/UX design and high quality Software Development.
@@ -123,7 +123,7 @@ const About = () => {
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeLeft}
             transition={{ duration: 0.5 }}
-            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+            className='sm:-mx-5   sm:text-center sm:tracking-wider sm:py-4'
           >
             My abundant energy fuels me in pursuit of many interest and hobbies.
           </motion.p>
@@ -133,7 +133,7 @@ const About = () => {
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeIn}
             transition={{ duration: 0.5 }}
-            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+            className='sm:-mx-5   sm:text-center sm:tracking-wider sm:py-4'
           >
             I ’m a fast learner, and quite adept at quickly mastering frameworks
             or tools specific to user preference.{' '}
@@ -145,7 +145,7 @@ const About = () => {
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeIn}
             transition={{ duration: 0.5 }}
-            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+            className='sm:-mx-5   sm:text-center sm:tracking-wider sm:py-4'
           >
             As a former medical scientist and startup founder, I have an
             excellent attention to details and able to work under tight
@@ -157,7 +157,7 @@ const About = () => {
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeLeft}
             transition={{ duration: 0.5 }}
-            className='sm:mx-auto sm:px-8 sm:text-center sm:tracking-wider sm:py-4'
+            className='sm:-mx-5   sm:text-center sm:tracking-wider sm:py-4'
           >
             My personality type like Steve Jobs, is INTJ and it reflects my
             commitment to innovation and a strong drive for achieving excellence
@@ -166,14 +166,14 @@ const About = () => {
         </div>
       </div>
       {/* Experience */}
-      <div className='mx-20 sm:mx-0 sm:w-full w-1/2 my-20'>
+      <div className='mx-20 sm:-mx-2  sm:w-full w-1/2 my-20'>
         <h2 className='text-glacous  ml-8 text-lg font-semibold sm:py-0 py-4'>
           Experience
         </h2>{' '}
         <Tabs
           orientation={winWidth < 640 ? 'horizontal' : 'vertical'}
           colorScheme='facebook'
-          className='mx-8 '
+          className='mx-8 sm:-mx-2'
           isManual
         >
           <TabList className=''>
@@ -266,8 +266,8 @@ const About = () => {
       {/* gap-2 grid grid-cols-12 grid-rows-2 px-8 */}
       {/* Projects */}
 
-      <div id='projects' className='mx-32 sm:mx-5'>
-        <h2 className='text-glacous sm:ml-8  text-lg font-semibold my-5 '>
+      <div id='projects' className='mx-32 sm:-mx-2'>
+        <h2 className='text-glacous sm:ml-8  text-lg font-semibold sm:my-5 mb-24 '>
           Projects
         </h2>
         <motion.div
@@ -349,7 +349,7 @@ const About = () => {
               />
             </CardBody>
 
-            <CardHeader className='pb-0 pt-2 px-4 flex-col items-center'>
+            <CardHeader className='pb-0 pt-2 px-4  sm:px-0 flex-col items-center'>
               <p className='text-tiny uppercase font-bold '>Portfolio</p>
               <small className='text-default-500'>My Personal Portfolio</small>
               <div className='flex gap-2 py-2'>
@@ -428,10 +428,10 @@ const About = () => {
       {/* Startup Projects */}
 
       <div>
-        <h3 className='text-center text-xl font-semibold text-glacous sm:py-3 py-8'>
+        <h3 className='text-center text-xl font-semibold text-glacous sm:py-3 '>
           My Startup Projects
         </h3>
-        <p className='px-3 pb-4 sm:w-full w-1/2 sm:mx-0 mx-auto'>
+        <p className='px-3 pt-20 sm:w-full w-1/2 sm:-mx-2 mx-auto'>
           I love building stuff, so I decided it would be fun and exciting to
           challenge myself to designing and building my own products to solve
           problems I come across
@@ -443,7 +443,7 @@ const About = () => {
           whileInView={{ opacity: 1 }}
           className='flex sm:flex-col sm:gap-5 justify-center items-center '
         >
-          <Card className='sm:py-4  rounded-md mx-3'>
+          <Card className='sm:py-4 pb-52 rounded-md mx-3'>
             <CardBody className='overflow-visible py-2 bg-white rounded-xl'>
               <Image
                 alt='Card background'
@@ -454,13 +454,13 @@ const About = () => {
               />
             </CardBody>
 
-            <CardHeader className='pb-0 pt-2 px-4 flex-col'>
+            <CardHeader className='pb-20 pt-2 px-4 sm:px-0 flex-col'>
               <motion.p
                 animate={winWidth > 768 ? { x: [-100, 0] } : { y: [100, 0] }}
                 transition={{ ease: 'easeIn', duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className=' uppercase font-bold '
+                className=' uppercase font-bold -mt-20 sm:mt-0'
               >
                 AI Career Planning Platform
               </motion.p>
@@ -471,7 +471,7 @@ const About = () => {
                   transition={{ ease: 'easeIn', duration: 1 }}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  className='text-default-500 flex items-center justify-center gap-2 p-1 rounded-md bg-blue-300'
+                  className='text-default-500 flex items-center justify-center gap-2 p-1 rounded-md bg-blue-300 hover:opacity-75'
                 >
                   {' '}
                   astudentsdreadream
@@ -482,14 +482,14 @@ const About = () => {
           </Card>
         </motion.div>
       </div>
-      <div className='flex sm:justify-between justify-center items-center border mx-4 my-4 py-10 px-2 rounded-md'>
+      <div className='flex sm:justify-between justify-center items-center border mx-2 px-2 sm:-mx-8 my-4 py-10  rounded-md'>
         <motion.div
           animate={winWidth > 768 ? { x: [-100, 0] } : { x: [-100, 0] }}
           transition={{ ease: 'easeIn', duration: 1 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >
-          <h3 className='sm:mx-0 mx-10'>Ready to kickstart your project ?</h3>
+          <h3 className='sm:-mx-1 mx-10'>Ready to kickstart your project ?</h3>
         </motion.div>
         <motion.div
           animate={winWidth > 768 ? { x: [-100, 0] } : { x: [100, 0] }}

@@ -40,7 +40,7 @@ const Header = () => {
           <div>
             <button
               type='button'
-              className='text-black mx-2 xl:px-1 hover:bg-lcterine   bg-white sm:p-2 rounded-full  active:bg-gray-500 active:text-white 2xl:p-3  my-4 xl:-mr-96  '
+              className='text-black mx-2 xl:px-1 hover:bg-lcterine   bg-white sm:p-2 rounded-full  active:bg-gray-500 active:text-white p-3  my-4 xl:-mr-96  '
             >
               <Link
                 href="mailto:emmanuelozigue@gmail.com?subject=Let's work together"
@@ -59,27 +59,27 @@ const Header = () => {
         <nav
           className={` ${
             navBar
-              ? ' text-gray-400 justify-center text-center bg-transparent w-80 items-center mx-auto rounded-full fixed sm:bottom-8   border border-gray-400 inset-x-0  '
-              : 'text-gray-400 justify-center text-center bg-transparent w-80 sm:items-center mx-auto rounded-full fixed sm:bottom-8   border border-gray-400 inset-x-0 backdrop-blur-sm'
+              ? ' text-gray-400 justify-center text-center bg-transparent w-80 items-center mx-auto rounded-full fixed sm:bottom-8   border border-gray-400 inset-x-0 z-10 '
+              : 'text-gray-400 justify-center text-center bg-transparent w-80 sm:items-center mx-auto rounded-full fixed sm:bottom-8   border border-gray-400 inset-x-0 backdrop-blur-sm z-10'
           }  `}
         >
           <ul className='flex-row inline-flex gap-5 p-4  '>
-            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-1 sm:py-1'>
+            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-1 sm:py-1 px-2 py-1'>
               <Link href='/' className='focus-within:text-white'>
                 Home
               </Link>
             </li>
-            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-2 sm:py-1'>
+            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-2 sm:py-1 px-1.5  py-1 '>
               <Link href='/about' className='focus-within:text-white '>
                 About
               </Link>
             </li>
-            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-1 sm:py-1'>
+            <li className='focus-within:bg-gray-600 focus-within:rounded-full sm:px-1 sm:py-1 px-1.5 py-1'>
               <Link href='/stack' className='focus-within:text-white'>
                 Stack
               </Link>
             </li>
-            <li className='focus-within:bg-gray-600 focus-within:rounded-full  sm:py-1'>
+            <li className='focus-within:bg-gray-600 focus-within:rounded-full  sm:py-1 px-1  py-1'>
               <Link href='/contact' className='focus-within:text-white'>
                 Contact
               </Link>

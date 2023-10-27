@@ -59,7 +59,7 @@ export default function Home () {
   }
 
   return (
-    <main className='text-white '>
+    <main className='text-white sm:mx-auto   w-full sm:w-72'>
       <motion.h1
         className='text-5xl sm:text-4xl mx-auto px-4 font-semibold py-5 text-center 2xl:py-20'
         animate={{ y: [100, 0] }}
@@ -124,7 +124,7 @@ export default function Home () {
             ABOUT ME
           </motion.h2>
           <motion.p
-            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            className='sm:text-white sm:-mx-2 sm:text-left sm:tracking-wider sm:py-4'
             ref={ref}
             initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
@@ -135,7 +135,7 @@ export default function Home () {
             building projects that solve problems for clients.
           </motion.p>
           <motion.p
-            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            className='sm:text-white sm:-mx-2 sm:text-left sm:tracking-wider sm:py-4'
             ref={ref}
             initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
@@ -148,7 +148,7 @@ export default function Home () {
             innovation.
           </motion.p>
           <motion.p
-            className='sm:text-white sm:mx-auto sm:px-8 sm:text-left sm:tracking-wider sm:py-4'
+            className='sm:text-white sm:-mx-2 sm:text-left sm:tracking-wider sm:py-4'
             ref={ref}
             initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
